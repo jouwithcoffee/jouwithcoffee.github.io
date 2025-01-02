@@ -1,44 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Metadatos básicos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIND READER</title>
+    <meta name="description" content="Mardel - O sabor da tradição argentina no Brasil">
+
+    <title>Mardel - Home</title>
+
+    <!-- Estilos -->
+    <!-- BootsWatch: Tema Minty para Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css">
+    <!-- Google Fonts: Iconos de Material Design -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <style>
+        /* Estilos generales */
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
+
         body {
             font-family: sans-serif;
             background-color: #f2f7f2;
-            display: flex;
-            align-items: center;
         }
-        .box {
-            margin: auto;
-            height: 60dvh;
-            width: 80%;
-            background-color: rgb(255, 140, 0);
-            box-shadow: 0 0 20px #333;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+
+        h1, h2 {
+            color: inherit;
+            font-weight: bold;
         }
+
+        /* Navbar personalizado */
+        .navbar {
+            background-color: #383838 !important;
+        }
+
+        .navbar-toggler {
+            background-color: #f2f7f2;
+            color: #383838;
+        }
+
+        nav a {
+            margin: 0 10px;
+            color: #f2f7f2;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            transform: scale(1.1);
+            background: linear-gradient(to left, rgba(132, 94, 194, 1), rgba(196, 243, 251, 1));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Fondo personalizado */
+        .custom-row {
+            color: #f2f7f2 !important;
+            padding: 150px 0;
+            background: url('images/mardelcafeteria.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .custom-row::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .custom-row > * {
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Textos destacados */
         span {
-            font-weight: bolder;
+            font-weight: bold;
         }
-        p {
-            font-size: 40px;
+
+        /* Sección informativa */
+        .row-informative {
+            align-items: center;
+            padding: 10px 3.5rem;
         }
+        .row-informative h2 {
+            color: #383838;
+        }
+        .col-informative {
+            padding: 0 1rem;
+            
+        }
+        .mardel-menu {
+            max-height: 25rem;
+            margin: 22px 0;
+        }
+
+        /* Media queries para mejor adaptación */
+        @media (max-width: 768px) {
+            .custom-row {
+                padding: 100px 0;
+            }
+            .row-informative {
+                padding: 10px 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Sección de números destacados */
+        .highlighted-number {
+          color: #8B4513; /* Marrón */
+          font-weight: bold;
+          font-size: 2.5rem;
+        }
+    
+        .container-benefits p {
+          font-weight: bold;
+          font-size: 1.2rem;
+          color: #333; /* Gris oscuro */
+        }
+
+        /* Sección de promociones */
+        .container-promotions .bg-brown {
+          background-color: #383838; /* Cambia según el color que quieras */
+        }
+        .container-promotions h2 {
+            color: #383838;
+        }
+        .container-promotions .card {
+            background: #1e1e2f; /* Fondo oscuro */
+            color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* Textura sutil */
+        }
+
+
+            /* Estilos de los botones */
+
+        .container-promotions .btn {
+            background: linear-gradient(90deg, #ff8a00, #e52e71, #9b51e0);
+            background-size: 300%;
+            animation: gradient-move 3s infinite;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        @keyframes gradient-move {
+            25% { background-position: 0%; }
+            75% { background-position: 100%; }
+        }
+
     </style>
 </head>
+
 <body>
-    <div class="box">
-        <span><p>me gustan los skibidi dop dop dop yes yes</p></span>
-    </div>
-    <script src="script.js"></script>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <img src="images/mardellogo.jpg" alt="Mardel logo" width="70" height="70" aria-label="Mardel Logo">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">(estos links del navbar son solo de prueba, debo modificarlos)</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main>
+        <div class="container-fluid">
+            <!-- Sección de fondo personalizado -->
+            <div class="row mb-5 custom-row">
+                <div class="col-12 text-center">
+                    <h1>Mardel</h1>
+                    <p>O sabor da tradição argentina no Brasil</p>
+                </div>
+            </div>
+            <!-- Sección informativa -->
+            <div class="row row-informative">
+                <div class="col-md-4 col-informative">
+                    <h2>Nossa história</h2>
+                    <p>Somos argentinos proprietários de uma padaria em Miramar, que vimos no Brasil uma oportunidade de trazer <span class="text-info">nossa cultura</span> para <span class="text-info">compartilhar</span> com vocês. Fabricamos <span class="text-info">doces tradicionais argentinos</span> para que você possa saborear o melhor da <span class="text-info">gastronomia argentina</span></p>
+                </div>
+                <div class="col-md-4 col-informative-img">
+                    <img src="images/mardel-menu.jpg" alt="Mardel menu" class="img-fluid rounded mx-auto d-block mardel-menu" aria-label="Imagem do menu de Mardel">
+                </div>
+                <div class="col-md-4 col-informative">
+                    <h2>Nosso objetivo</h2>
+                    <p>Nosso objetivo é criar um espaço para proporcionar <span class="text-info">experiências inesquecíveis</span> com delícias tradicionais argentinas, que cheguam ao <span class="text-info">fundo do coração</span>. Queremos que você se sinta em casa ao visitar nossa cafeteria, mas ao mesmo tempo <span class="text-info">imerso na tradição argentina</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de beneficios -->
+        <div class="container container-benefits">
+            <div class="container my-5">
+                <div class="row text-center">
+                  <div class="col-md-4">
+                    <h2 class="highlighted-number">24/7</h2>
+                    <p>Sempre aberto</p>
+                  </div>
+                  <div class="col-md-4">
+                    <h2 class="highlighted-number material-symbols-outlined">wifi</h2>
+                    <p>Wifi 100% gratuito</p>
+                  </div>
+                  <div class="col-md-4">
+                    <h2 class="highlighted-number material-symbols-outlined">bakery_dining</h2>
+                    <p>Sabores únicos e argentinos</p>
+                  </div>
+                </div>
+              </div>             
+        </div>
+
+        <!-- Sección de promociones -->
+
+        <div class="container container-promotions">
+            <section class="py-5">
+                <div class="container text-center">
+                  <h2 class="mb-4">Promoções</h2>
+                  <div class="row">
+                    <!-- Card 1 -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                      <div class="card h-100 text-white bg-brown">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                          <h5 class="card-title">Café Clásico</h5>
+                          <p class="card-subtitle mb-2">$3/Por Taza</p>
+                          <p class="card-text">Disfruta de nuestro café clásico, siempre fresco y delicioso.</p>
+                          <a href="#" class="btn btn-light mt-auto">¡Pídelo Ahora!</a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                      <div class="card h-100 text-white bg-brown">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                          <h5 class="card-title">Combo Pastel</h5>
+                          <p class="card-subtitle mb-2">$8/Por Taza</p>
+                          <p class="card-text">Café + pastel de tu elección, la combinación perfecta.</p>
+                          <a href="#" class="btn btn-light mt-auto">¡Pídelo Ahora!</a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                      <div class="card h-100 text-white bg-brown">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                          <h5 class="card-title">Café Premium</h5>
+                          <p class="card-subtitle mb-2">$5/Por Taza</p>
+                          <p class="card-text">Café de especialidad, para los verdaderos amantes del café.</p>
+                          <a href="#" class="btn btn-light mt-auto">¡Pídelo Ahora!</a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                      <div class="card h-100 text-white bg-brown">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                          <h5 class="card-title">Fiesta de Café</h5>
+                          <p class="card-subtitle mb-2">$20/Por Taza</p>
+                          <p class="card-text">Café ilimitado y pasteles para compartir, ¡trae a tus amigos!</p>
+                          <a href="#" class="btn btn-light mt-auto">¡Pídelo Ahora!</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>
