@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mardel - O sabor da tradição argentina no Brasil">
 
+    <!-- !!! NOTA: AGREGAR METADATOS AVANZADOS PARA MEJOR POSICIONAMIENTO DE LA PÁGINA !!! -->
+     
+    <meta name="keywords" content="Mardel, Argentina, Brasil, Café, Gastronomia, Tradição, Itapema, Cafeteria, Confeitaria, doces, tradicionais, argentinos, pasteles, bolos, tortas">
+
     <title>Mardel - Home</title>
 
     <!-- Estilos -->
@@ -18,11 +22,14 @@
         /* Estilos generales */
         * {
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: sans-serif;
-            background-color: #f2f7f2;
+            background-color: #e3e9e3;
+            margin: 0;
+            padding: 0;
         }
 
         h1, h2 {
@@ -30,28 +37,111 @@
             font-weight: bold;
         }
 
-        /* Navbar personalizado */
-        .navbar {
-            background-color: #383838 !important;
+        /* Navbar General */
+        .bg-dark {
+          background-color: #383838 !important;
         }
 
-        .navbar-toggler {
-            background-color: #f2f7f2;
-            color: #383838;
+        .transition {
+          transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        nav a {
-            margin: 0 10px;
-            color: #f2f7f2;
-            font-weight: bold;
-            text-decoration: none;
+        .scrolled {
+          background-color: #1c1c1c !important;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
         }
 
-        .navbar a:hover {
-            transform: scale(1.1);
-            background: linear-gradient(to left, rgba(132, 94, 194, 1), rgba(196, 243, 251, 1));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Navbar Branding */
+        .navbar-brand span {
+          color: #f3d9b1;
+          font-family: 'Poppins', sans-serif;
+          letter-spacing: 1px;
+          font-size: 1.2rem;
+        }
+
+        .navbar-brand img {
+          max-width: 60px;
+          height: auto;
+        }
+
+        /* Links */
+        .nav-link {
+          margin-left: .4rem;
+          position: relative;
+          font-size: 1rem;
+          transition: color 0.3s ease-in-out;
+        }
+
+        .nav-link:hover {
+          color: #f3d9b1;
+        }
+
+        /* Hover Animation */
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background-color: #f3d9b1;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .nav-link:hover::after {
+          width: 100%;
+          left: 0;
+        }
+
+        /* Dropdown */
+        .dropdown-menu {
+          background: #343a40;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-item {
+          color: #f3d9b1;
+        }
+
+        .dropdown-item:hover {
+          background-color: #495057;
+          color: white;
+        }
+
+        /* Call to Action Button */
+        .btn-primary {
+          background: linear-gradient(45deg, #f3a683, #eb5757);
+          border: none;
+          margin-left: 1.2rem;
+        }
+
+        .btn-primary:hover {
+          background: linear-gradient(45deg, #eb5757, #f3a683);
+          box-shadow: 0 4px 10px rgba(235, 87, 87, 0.4);
+          filter: drop-shadow(0 4px 10px rgba(255, 232, 232, 0.884));
+        }
+
+        /* Mobile Responsiveness */
+        .navbar-nav {
+          flex-direction: column;
+        }
+
+        .nav-item {
+          margin-bottom: 10px;
+        }
+
+        /* Sticky and Responsive */
+        @media (max-width: 576px) {
+          .navbar-brand span {
+            font-size: 1rem;
+          }
+      
+          .btn-primary {
+            font-size: 0.9rem;
+            padding: 8px 16px;
+          }
         }
 
         /* Fondo personalizado */
@@ -81,7 +171,46 @@
 
         /* Textos destacados */
         span {
-            font-weight: bold;
+            font-weight: bolder;
+        }
+
+        /* Botones personalizados (links a secciones) */
+/**
+/**        .container-buttons {
+/**          text-align: center;
+/**          padding: 50px 20px;
+/**          background: linear-gradient(120deg, #f4ede6, #f3e8d5);
+/**          border-radius: 10px;
+/**          box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+/**        }
+/**
+            /* Contenedor para los botones */
+        .button-container {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+
+            /* Estilos para los botones */
+        .custom-button {
+          display: inline-block;
+          padding: 15px 30px;
+          font-size: 1.1rem;
+          color: white !important;
+          background: linear-gradient(to left, rgba(132, 94, 194, 1), rgba(196, 243, 251, 1));
+          border: none;
+          border-radius: 50px;
+          text-decoration: none;
+          font-weight: bold;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+          transition: all 0.3s ease-in-out;
+        }
+
+        .custom-button:hover {
+          transform: scale(1.1);
+          background: linear-gradient(to right, rgba(132, 94, 194, 1), rgba(196, 243, 251, 1));
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
         }
 
         /* Sección informativa */
@@ -134,12 +263,12 @@
 
         /* Sección de promociones */
         .container-promotions .bg-brown {
-          background-color: #383838; /* Cambia según el color que quieras */
+          background-color: #383838;
         }
-        .container-promotions h2 {
+        .container-promotions h2, .container-products h2 {
             color: #383838;
         }
-        .container-promotions .card {
+        .container-promotions .card, .container-products .card {
             background: #1e1e2f; /* Fondo oscuro */
             color: #fff;
             border-radius: 10px;
@@ -151,7 +280,7 @@
 
             /* Estilos de los botones */
 
-        .container-promotions .btn {
+        .container-promotions .btn, .container-products .btn {
             background: linear-gradient(90deg, #ff8a00, #e52e71, #9b51e0);
             background-size: 300%;
             animation: gradient-move 3s infinite;
@@ -159,176 +288,122 @@
             color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
+            margin: auto;
         }
         @keyframes gradient-move {
             25% { background-position: 0%; }
             75% { background-position: 100%; }
         }
-        /* Navbar General */
-        .transition {
-          transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+        /* Sección de productos */
+        .container-products .card {
+            background: #FFFBF2; /* Fondo claro */
+            color: #383838 !important;
+            background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* Textura sutil */
         }
 
-        .scrolled {
-          background-color: #1c1c1c !important;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+
+        /* Sección de ubicación */
+
+        .section-location {
+          text-align: center;
+          padding: 50px 20px;
+          background: #FFFBF2;
+          background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+          border-radius: 10px;
+          margin: 50px 0;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        /* Navbar Branding */
-        .navbar-brand span {
-          color: #f3d9b1;
-          font-family: 'Poppins', sans-serif;
-          letter-spacing: 1px;
+        .section-location h2 {
+          font-size: 2rem;
+          color: #5c4033;
+          margin-bottom: 20px;
+          font-weight: bold;
+        }
+
+        .section-location p {
           font-size: 1.2rem;
+          color: #6b4a3c;
+          margin-bottom: 20px;
         }
 
-        .navbar-brand img {
-          max-width: 40px;
-          height: auto;
-        }
-
-        /* Links */
-        .nav-link {
-          position: relative;
-          font-size: 1rem;
-          transition: color 0.3s ease-in-out;
-        }
-
-        .nav-link:hover {
-          color: #f3d9b1;
-        }
-
-        /* Hover Animation */
-        .nav-link::after {
-          content: '';
-          position: absolute;
-          bottom: -5px;
-          left: 50%;
-          width: 0;
-          height: 2px;
-          background-color: #f3d9b1;
-          transition: all 0.3s ease-in-out;
-        }
-
-        .nav-link:hover::after {
+        .map-container {
           width: 100%;
-          left: 0;
+          max-width: 800px;
+          height: 520px;
+          margin: 0 auto;
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
-        /* Dropdown */
-        .dropdown-menu {
-          background: #343a40;
+        iframe {
           border: none;
-          border-radius: 5px;
-          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+          width: 100%;
+          height: 100%;
         }
-
-        .dropdown-item {
-          color: #f3d9b1;
-        }
-
-        .dropdown-item:hover {
-          background-color: #495057;
-          color: white;
-        }
-
-        /* Call to Action Button */
-        .btn-primary {
-          background: linear-gradient(45deg, #f3a683, #eb5757);
-          border: none;
-        }
-
-        .btn-primary:hover {
-          background: linear-gradient(45deg, #eb5757, #f3a683);
-          box-shadow: 0 4px 10px rgba(235, 87, 87, 0.4);
-        }
-
-        /* Mobile Responsiveness */
-        .navbar-nav {
-          flex-direction: column;
-        }
-
-        .nav-item {
-          margin-bottom: 10px;
-        }
-
-        /* Sticky and Responsive */
-        @media (max-width: 576px) {
-          .navbar-brand span {
-            font-size: 1rem;
-          }
-      
-          .btn-primary {
-            font-size: 0.9rem;
-            padding: 8px 16px;
-          }
-        }
-
-
     </style>
+
     <script>
-        document.addEventListener('scroll', () => {
-          const navbar = document.getElementById('navbar');
-          if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-          } else {
-            navbar.classList.remove('scrolled');
-          }
-        });
+      document.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
     </script>
-      
 </head>
 
 <body>
-        <!-- NAVBAR -->
+    <!-- NAVBAR -->
     <nav id="navbar" class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm sticky-top transition">
-        <div class="container-fluid">
-          <!-- Logo -->
-          <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="images/mardellogo.jpg" alt="Mardel Logo" width="50" height="50" class="rounded-circle me-2">
-            <span class="fw-bold text-uppercase">Mardel Café</span>
-          </a>
-          <!-- Toggler -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!-- Links -->
-          <div class="collapse navbar-collapse text-center" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Menú</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Promociones</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-              <!-- Dropdown -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Más
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Blog</a></li>
-                  <li><a class="dropdown-item" href="#">Contacto</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Política de Privacidad</a></li>
-                </ul>
-              </li>
-              <!-- Call to Action Button -->
-              <li class="nav-item mt-2 mt-lg-0">
-                <a href="#reservar" class="btn btn-primary px-4 py-2 rounded-pill text-light shadow-sm">Reserva Ahora</a>
-              </li>
-            </ul>
-          </div>
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="images/mardellogo.jpg" alt="Mardel Logo" width="50" height="50" class="rounded-circle me-2">
+          <span class="fw-bold text-uppercase">Mardel Café</span>
+        </a>
+        <!-- Toggler -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Links -->
+        <div class="collapse navbar-collapse text-center" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Menú</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Promociones</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Más
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Blog</a></li>
+                <li><a class="dropdown-item" href="#">Contacto</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Política de Privacidad</a></li>
+              </ul>
+            </li>
+            <!-- Call to Action Button -->
+            <li class="nav-item mt-2 mt-lg-0">
+              <a href="#reservar" class="btn btn-primary px-4 py-2 rounded-pill text-light shadow-sm">Reserva Ahora</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-  
-
-  
+      </div>
+    </nav>
 
     <!-- Contenido Principal -->
     <main>
@@ -340,6 +415,15 @@
                     <p>O sabor da tradição argentina no Brasil</p>
                 </div>
             </div>
+            <div class="container container-buttons">
+                <section class="section-buttons">
+                    <div class="button-container">
+                      <a href="#menu" class="custom-button">Ver Produtos</a>
+                      <a href="#locate" class="custom-button">Visite-nos!</a>
+                    </div>
+                </section>
+            </div>
+
             <!-- Sección informativa -->
             <div class="row row-informative">
                 <div class="col-md-4 col-informative">
@@ -430,6 +514,120 @@
                   </div>
                 </div>
             </section>
+        </div>
+
+        <!-- Sección de productos -->
+
+        <div class="container container-products">
+            <section class="py-5">
+                <div class="container text-center">
+                    <h2 class="mb-4" id="menu">Nosso cardápio!</h2>
+                </div>
+                <div class="row text-center">
+                    <!-- Card 1 -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 text-white bg-brown">
+                          <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title">Café com Leite</h5>
+                            <p class="card-subtitle mb-2">$12 R</p>
+                            <p class="card-text">Simplesmente o clássico café com leite</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    <!-- Card 2 -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                      <div class="card h-100 text-white bg-brown">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                          <h5 class="card-title">Capuccino</h5>
+                          <p class="card-subtitle mb-2">$18 R</p>
+                          <p class="card-text">Café conhecido pelas suas 3 cores: café, leite e creme</p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                      <div class="card h-100 text-white bg-brown">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                          <h5 class="card-title">Café Pequeno</h5>
+                          <p class="card-subtitle mb-2">$8 R</p>
+                          <p class="card-text">Café em xícara pequena, pode ser cortado ou sozinho</p>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                      <div class="card h-100 text-white bg-brown">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                          <h5 class="card-title">Suco natural de laranja</h5>
+                          <p class="card-subtitle mb-2">$18 R</p>
+                          <p class="card-text">Um cítrico natural e suco fresco</p>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 text-white bg-brown">
+                          <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title">Croissant Presunto e Queijo</h5>
+                            <p class="card-subtitle mb-2">$15</p>
+                            <p class="card-text">Uma deliciosa explosão de sabores</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Card 6 -->
+                      <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 text-white bg-brown">
+                          <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title">Combo Pastel</h5>
+                            <p class="card-subtitle mb-2">$8/Por Taza</p>
+                            <p class="card-text">Café + pastel de tu elección, la combinación perfecta.</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    <!-- Card 7 -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                      <div class="card h-100 text-white bg-brown">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                          <h5 class="card-title">Café Premium</h5>
+                          <p class="card-subtitle mb-2">$5/Por Taza</p>
+                          <p class="card-text">Café de especialidad, para los verdaderos amantes del café.</p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                      <div class="card h-100 text-white bg-brown">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                          <h5 class="card-title">Fiesta de Café</h5>
+                          <p class="card-subtitle mb-2">$20/Por Taza</p>
+                          <p class="card-text">Café ilimitado y pasteles para compartir, ¡trae a tus amigos!</p>
+                        </div>
+                      </div>
+                    </div>
+                  <a href="menu.html" class="btn btn-light mt-auto menu-complete-button">Ver o cardápio completo</a>
+                </div>
+            </section>
+        </div>
+        <div class="container container-ubication">
+          <section class="section-location">
+            <h2 id="locate">Visite-nos!</h2>
+            <p>Visite-nos em nossa localidade para experimentar nossas delícias argentinas!</p>
+            <div class="map-container">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.5257936924727!2d-48.59561710258484!3d-27.13974231000776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8afcb97b06c95%3A0x7d1b0475a0e4a455!2sRua%20306%2C%2084%20-%20sala%205%20-%20Meia%20Praia%2C%20Itapema%20-%20SC%2C%2088220-000!5e0!3m2!1sen!2sbr!4v1735847518409!5m2!1sen!2sbr" width="100%"
+                height="350"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </section>
         </div>
     </main>
 

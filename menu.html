@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadatos básicos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mardel - O sabor da tradição argentina no Brasil">
+
+    <!-- !!! NOTA: AGREGAR METADATOS AVANZADOS PARA MEJOR POSICIONAMIENTO DE LA PÁGINA !!! -->
+     
+    <meta name="keywords" content="Mardel, Argentina, Brasil, Café, Gastronomia, Tradição, Itapema, Cafeteria, Confeitaria, doces, tradicionais, argentinos, pasteles, bolos, tortas">
+
+    <title>Mardel - Home</title>
+
+    <!-- Estilos -->
+    <!-- BootsWatch: Tema Minty para Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css">
+    <!-- Google Fonts: Iconos de Material Design -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        /* Estilos generales */
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #e3e9e3;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            color: inherit;
+            font-weight: bold;
+        }
+
+        /* Navbar General */
+        .bg-dark {
+          background-color: #383838 !important;
+        }
+
+        .transition {
+          transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .scrolled {
+          background-color: #1c1c1c !important;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Navbar Branding */
+        .navbar-brand span {
+          color: #f3d9b1;
+          font-family: 'Poppins', sans-serif;
+          letter-spacing: 1px;
+          font-size: 1.2rem;
+        }
+
+        .navbar-brand img {
+          max-width: 60px;
+          height: auto;
+        }
+
+        /* Links */
+        .nav-link {
+          margin-left: .4rem;
+          position: relative;
+          font-size: 1rem;
+          transition: color 0.3s ease-in-out;
+        }
+
+        .nav-link:hover {
+          color: #f3d9b1;
+        }
+
+        /* Hover Animation */
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background-color: #f3d9b1;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .nav-link:hover::after {
+          width: 100%;
+          left: 0;
+        }
+
+        /* Dropdown */
+        .dropdown-menu {
+          background: #343a40;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-item {
+          color: #f3d9b1;
+        }
+
+        .dropdown-item:hover {
+          background-color: #495057;
+          color: white;
+        }
+
+        /* Call to Action Button */
+        .btn-primary {
+          background: linear-gradient(45deg, #f3a683, #eb5757);
+          border: none;
+          margin-left: 1.2rem;
+        }
+
+        .btn-primary:hover {
+          background: linear-gradient(45deg, #eb5757, #f3a683);
+          box-shadow: 0 4px 10px rgba(235, 87, 87, 0.4);
+          filter: drop-shadow(0 4px 10px rgba(255, 232, 232, 0.884));
+        }
+
+        /* Mobile Responsiveness */
+        .navbar-nav {
+          flex-direction: column;
+        }
+
+        .nav-item {
+          margin-bottom: 10px;
+        }
+
+        /* Sticky and Responsive */
+        @media (max-width: 576px) {
+          .navbar-brand span {
+            font-size: 1rem;
+          }
+      
+          .btn-primary {
+            font-size: 0.9rem;
+            padding: 8px 16px;
+          }
+        }
+
+
+        /* Menu Section */
+
+
+
+        .menu-section {
+            padding: 2rem 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .menu-section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #8b4513;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-item h3 {
+            font-size: 1.2rem;
+            margin: 0;
+            color: #5a3e2b;
+        }
+
+        .menu-item p {
+            margin: 0 1rem 0 0;
+            font-size: 0.9rem;
+            color: #7d7d7d;
+        }
+
+        .menu-item span {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #8b4513;
+        }
+
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #8b4513;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .back-to-top:hover {
+            background-color: #a0522d;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav id="navbar" class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm sticky-top transition">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="images/mardellogo.jpg" alt="Mardel Logo" width="50" height="50" class="rounded-circle me-2">
+          <span class="fw-bold text-uppercase" style="font-weight: bold;">Mardel Café</span>
+        </a>
+        <!-- Toggler -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Links -->
+        <div class="collapse navbar-collapse text-center" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Menú</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Promociones</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Más
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Blog</a></li>
+                <li><a class="dropdown-item" href="#">Contacto</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Política de Privacidad</a></li>
+              </ul>
+            </li>
+            <!-- Call to Action Button -->
+            <li class="nav-item mt-2 mt-lg-0">
+              <a href="#reservar" class="btn btn-primary px-4 py-2 rounded-pill text-light shadow-sm">Reserva Ahora</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <!-- Bebidas Quentes -->
+      <section class="menu-section" id="bebidas-quentes">
+          <h2>Bebidas Quentes</h2>
+          <div class="menu-item">
+              <div>
+                  <h3>Café Pequeno</h3>
+                  <p>Um café intenso em xícara pequena, pode ser cortado ou sozinho</p>
+              </div>
+              <span>R$ 8,00</span>
+          </div>
+          <div class="menu-item">
+            <div>
+                <h3>Café Médio</h3>
+                <p>Um café mais grande que o pequeno, pode ser cortado ou sozinho</p>
+            </div>
+            <span>R$ 9,00</span>
+          </div>
+          <div class="menu-item">
+              <div>
+                  <h3>Café com Leite</h3>
+                  <p>Simplesmente o clássico café com leite</p>
+              </div>
+              <span>R$ 12,00</span>
+          </div>
+          <div class="menu-item">
+              <div>
+                  <h3>Cappuccino</h3>
+                  <p>Café conhecido pelas suas 3 cores: café, leite e creme</p>
+              </div>
+              <span>R$ 18,00</span>
+          </div>
+          <div class="menu-item">
+            <div>
+                <h3>Chocolate Suiço</h3>
+                <p>...</p>
+            </div>
+            <span>R$ 18,00</span>
+          </div>
+          <div class="menu-item">
+              <div>
+                  <h3>Leite com Chocolate</h3>
+                  <p>...</p>
+              </div>
+              <span>R$ 12,00</span>
+          </div>
+          <div class="menu-item">
+              <div>
+                  <h3>Leite</h3>
+                  <p>Somente leite</p>
+              </div>
+              <span>R$ 6,00</span>
+          </div>
+          <div class="menu-item">
+            <div>
+                <h3>Chá</h3>
+                <p>Chá com leite ou som, pode ser saborizado</p>
+            </div>
+            <span>R$ 6,00</span>
+          </div>
+          <div class="menu-item">
+            <div>
+                <h3>Submarino</h3>
+                <p>...</p>
+            </div>
+            <span>R$ 22,00</span>
+          </div>
+      </section>
+
+      <!-- Bebidas -->
+      <section class="menu-section" id="promocoes">
+          <h2>Bebidas</h2>
+          <div class="menu-item">
+              <div>
+                  <h3>Coca-Cola, Sprite ou Fanta de Laranja</h3>
+                  <p>Tamanho: 600ml</p>
+              </div>
+              <span>R$ 10,00 cada um</span>
+          </div>
+          <div class="menu-item">
+            <div>
+                <h3>Suco Natural de Laranja</h3>
+                <p>Um cítrico natural e suco fresco</p>
+            </div>
+            <span>R$ 18,00</span>
+          </div>
+          <div class="menu-item">
+            <div>
+                <h3>Àgua Mineral</h3>
+                <p>Àgua fresca, com ou sem gás</p>
+            </div>
+            <span>R$ 5,00</span>
+          </div>
+          <div class="menu-item">
+            <div>
+                <h3>Cerveja</h3>
+                <p>Corona, Stella, Heineken, Brahma, tudo fresquinho!</p>
+            </div>
+            <span>R$ 15,00</span>
+          </div>
+      </section>
+
+      <!-- Vitaminas -->
+      <section class="menu-section" id="promocoes">
+        <h2>Vitaminas</h2>
+        <div class="menu-item">
+            <div>
+                <h3>Vitaminas em variedade</h3>
+                <p>Banana com Leite e Gelo, Morango com Leite/Água, Pêssegos com Leite/Água, ou Abacaxi com Leite/Água</p>
+            </div>
+            <span>R$ 22,00</span>
+        </div>
+      </section>
+
+      <!-- Salgados -->
+      <section class="menu-section" id="promocoes">
+        <h2>Salgados</h2>
+        <div class="menu-item">
+            <div>
+                <h3>Pebetes Presunto e Queijo</h3>
+                <p>...</p>
+            </div>
+            <span>R$ 20,00</span>
+        </div>
+        <div class="menu-item">
+          <div>
+              <h3>Baguete Presunto e Queijo</h3>
+              <p>...</p>
+          </div>
+          <span>R$ 25,00</span>
+        </div>
+        <div class="menu-item">
+          <div>
+              <h3>Croissant Presunto e Queijo</h3>
+              <p>...</p>
+          </div>
+          <span>R$ 15,00</span>
+        </div>
+        <div class="menu-item">
+          <div>
+              <h3>Empanadas</h3>
+              <p>Presunto e Queijo, Carnes ou Frango</p>
+          </div>
+          <span>R$ 14,00</span>
+        </div>
+      </section>
+  
+      <!-- Bolos e Doces -->
+      <section class="menu-section" id="promocoes">
+        <h2>Promoções</h2>
+        <div class="menu-item">
+            <div>
+                <h3>Bolos Variados</h3>
+                <p>...</p>
+            </div>
+            <span>R$ 19,00</span>
+        </div>
+        <div class="menu-item">
+          <div>
+              <h3>Brownies</h3>
+              <p>...</p>
+          </div>
+          <span>R$ 19,00</span>
+        </div>
+        <div class="menu-item">
+          <div>
+              <h3>Massas Secas</h3>
+              <p>...</p>
+          </div>
+          <span>R$ 8,00</span>
+        </div>
+      </section>
+
+      <!-- Promoções -->
+      <section class="menu-section" id="promocoes">
+        <h2>Promoções</h2>
+        <div class="menu-item">
+            <div>
+                <h3>Combo Café + Croissant</h3>
+                <p>O melhor lanche da manhã.</p>
+            </div>
+            <span>R$ 12,00</span>
+        </div>
+      </section>
+
+      <!-- Promoções -->
+      <section class="menu-section" id="promocoes">
+        <h2>Promoções</h2>
+        <div class="menu-item">
+            <div>
+                <h3>Combo Café + Croissant</h3>
+                <p>O melhor lanche da manhã.</p>
+            </div>
+            <span>R$ 12,00</span>
+        </div>
+      </section>
+
+
+      <!-- Adicione as outras seções similares aqui -->
+  </main>
+
+  <button class="back-to-top" onclick="scrollToTop()">&uarr;</button>
+  
+    <!-- JavaScript para el botón back-to-top -->
+    <script>
+      // Espera a que el DOM esté completamente cargado
+      document.addEventListener("DOMContentLoaded", function() {
+          // Selecciona el botón
+          var backToTopButton = document.querySelector('.back-to-top');
+      
+          // Añade un evento de clic al botón
+          backToTopButton.addEventListener('click', function() {
+              // Desplaza la página hacia arriba
+              window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth'
+              });
+          });
+        
+          // Muestra u oculta el botón según el desplazamiento de la página
+          window.addEventListener('scroll', function() {
+              if (window.scrollY > 100) {
+                  backToTopButton.style.display = 'block';
+              } else {
+                  backToTopButton.style.display = 'none';
+              }
+          });
+      });
+  </script>
+
+  <!-- Scripts de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
