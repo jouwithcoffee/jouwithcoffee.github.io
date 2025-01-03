@@ -164,38 +164,171 @@
             25% { background-position: 0%; }
             75% { background-position: 100%; }
         }
+        /* Navbar General */
+        .transition {
+          transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .scrolled {
+          background-color: #1c1c1c !important;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Navbar Branding */
+        .navbar-brand span {
+          color: #f3d9b1;
+          font-family: 'Poppins', sans-serif;
+          letter-spacing: 1px;
+          font-size: 1.2rem;
+        }
+
+        .navbar-brand img {
+          max-width: 40px;
+          height: auto;
+        }
+
+        /* Links */
+        .nav-link {
+          position: relative;
+          font-size: 1rem;
+          transition: color 0.3s ease-in-out;
+        }
+
+        .nav-link:hover {
+          color: #f3d9b1;
+        }
+
+        /* Hover Animation */
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background-color: #f3d9b1;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .nav-link:hover::after {
+          width: 100%;
+          left: 0;
+        }
+
+        /* Dropdown */
+        .dropdown-menu {
+          background: #343a40;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-item {
+          color: #f3d9b1;
+        }
+
+        .dropdown-item:hover {
+          background-color: #495057;
+          color: white;
+        }
+
+        /* Call to Action Button */
+        .btn-primary {
+          background: linear-gradient(45deg, #f3a683, #eb5757);
+          border: none;
+        }
+
+        .btn-primary:hover {
+          background: linear-gradient(45deg, #eb5757, #f3a683);
+          box-shadow: 0 4px 10px rgba(235, 87, 87, 0.4);
+        }
+
+        /* Mobile Responsiveness */
+        .navbar-nav {
+          flex-direction: column;
+        }
+
+        .nav-item {
+          margin-bottom: 10px;
+        }
+
+        /* Sticky and Responsive */
+        @media (max-width: 576px) {
+          .navbar-brand span {
+            font-size: 1rem;
+          }
+      
+          .btn-primary {
+            font-size: 0.9rem;
+            padding: 8px 16px;
+          }
+        }
+
 
     </style>
+    <script>
+        document.addEventListener('scroll', () => {
+          const navbar = document.getElementById('navbar');
+          if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+    </script>
+      
 </head>
 
 <body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <!-- NAVBAR -->
+    <nav id="navbar" class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm sticky-top transition">
         <div class="container-fluid">
-            <img src="images/mardellogo.jpg" alt="Mardel logo" width="70" height="70" aria-label="Mardel Logo">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="material-symbols-outlined">menu</span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Si, sé que esto se desborda en celulares jaajsja</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">(estos links del navbar son solo de prueba, debo modificarlos)</a>
-                        </div>
-                    </li>
+          <!-- Logo -->
+          <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="images/mardellogo.jpg" alt="Mardel Logo" width="50" height="50" class="rounded-circle me-2">
+            <span class="fw-bold text-uppercase">Mardel Café</span>
+          </a>
+          <!-- Toggler -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Links -->
+          <div class="collapse navbar-collapse text-center" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Menú</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Promociones</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+              <!-- Dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Más
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Blog</a></li>
+                  <li><a class="dropdown-item" href="#">Contacto</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Política de Privacidad</a></li>
                 </ul>
-            </div>
+              </li>
+              <!-- Call to Action Button -->
+              <li class="nav-item mt-2 mt-lg-0">
+                <a href="#reservar" class="btn btn-primary px-4 py-2 rounded-pill text-light shadow-sm">Reserva Ahora</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
+      </nav>
+  
+
+  
 
     <!-- Contenido Principal -->
     <main>
