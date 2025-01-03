@@ -280,7 +280,7 @@
 
             /* Estilos de los botones */
 
-        .container-promotions .btn, .container-products .btn {
+        .container-promotions .btn, .container-products .btn, .container-images .btn {
             background: linear-gradient(90deg, #ff8a00, #e52e71, #9b51e0);
             background-size: 300%;
             animation: gradient-move 3s infinite;
@@ -295,15 +295,93 @@
             75% { background-position: 100%; }
         }
 
+        .btn-product {
+          width: 100%;
+        }
+
         /* Sección de productos */
         .container-products .card {
             background: #FFFBF2; /* Fondo claro */
             color: #383838 !important;
             background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* Textura sutil */
         }
+        
+
+
+
+        /* Estilos de las imágenes */
+
+        .container-images h2 {
+          color: #383838;
+        }
+
+        .section-images {
+            padding: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            opacity: 0.7;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.2));
+            z-index: 1;
+        }
+
+        .gallery-item h3 {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+            z-index: 2;
+            color: white;
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-container {
+                padding: 20px;
+            }
+
+            .gallery-item h3 {
+                font-size: 1.2rem;
+            }
+        }
 
 
         /* Sección de ubicación */
+
+        .container-images {
+          text-align: center;
+        }
 
         .section-location {
           text-align: center;
@@ -381,10 +459,12 @@
         <div class="collapse navbar-collapse text-center" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Menú</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Promociones</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="#promociones">Promoções</a></li>
+            <li class="nav-item"><a class="nav-link" href="#menu">Cardápio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#gallery">Galeria</a></li>
+            <li class="nav-item"><a class="nav-link" href="#locate">Visite-nos!</a></li>
             <!-- Dropdown -->
+            <!-- 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Más
@@ -396,10 +476,14 @@
                 <li><a class="dropdown-item" href="#">Política de Privacidad</a></li>
               </ul>
             </li>
+            -->
             <!-- Call to Action Button -->
+
+            <!--
             <li class="nav-item mt-2 mt-lg-0">
               <a href="#reservar" class="btn btn-primary px-4 py-2 rounded-pill text-light shadow-sm">Reserva Ahora</a>
             </li>
+          -->
           </ul>
         </div>
       </div>
@@ -415,6 +499,7 @@
                     <p>O sabor da tradição argentina no Brasil</p>
                 </div>
             </div>
+            <!--
             <div class="container container-buttons">
                 <section class="section-buttons">
                     <div class="button-container">
@@ -423,6 +508,7 @@
                     </div>
                 </section>
             </div>
+          -->
 
             <!-- Sección informativa -->
             <div class="row row-informative">
@@ -463,7 +549,7 @@
         <!-- Sección de promociones -->
 
         <div class="container container-promotions">
-            <section class="py-5">
+            <section class="py-5" id="promociones">
                 <div class="container text-center">
                   <h2 class="mb-4">Promoções</h2>
                   <div class="row">
@@ -519,102 +605,134 @@
         <!-- Sección de productos -->
 
         <div class="container container-products">
-            <section class="py-5">
+            <section class="py-5" id="menu">
                 <div class="container text-center">
-                    <h2 class="mb-4" id="menu">Nosso cardápio!</h2>
+                    <h2 class="mb-4">Nosso cardápio!</h2>
                 </div>
                 <div class="row text-center">
                     <!-- Card 1 -->
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card h-100 text-white bg-brown">
+                          <span class="btn btn-light mt-auto btn-product"></span>
                           <div class="card-body d-flex flex-column justify-content-between">
                             <h5 class="card-title">Café com Leite</h5>
                             <p class="card-subtitle mb-2">$12 R</p>
                             <p class="card-text">Simplesmente o clássico café com leite</p>
-                            
                           </div>
+                          <span class="btn btn-light mt-auto btn-product"></span>
                         </div>
-                      </div>
+                    </div>
                     <!-- Card 2 -->
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                       <div class="card h-100 text-white bg-brown">
+                        <span class="btn btn-light mt-auto btn-product"></span>
                         <div class="card-body d-flex flex-column justify-content-between">
-                          <h5 class="card-title">Capuccino</h5>
-                          <p class="card-subtitle mb-2">$18 R</p>
-                          <p class="card-text">Café conhecido pelas suas 3 cores: café, leite e creme</p>
-                          
+                          <h5 class="card-title">Café com Leite</h5>
+                          <p class="card-subtitle mb-2">$12 R</p>
+                          <p class="card-text">Simplesmente o clássico café com leite</p>
                         </div>
+                        <span class="btn btn-light mt-auto btn-product"></span>
                       </div>
-                    </div>
+                   </div>
                     <!-- Card 3 -->
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                       <div class="card h-100 text-white bg-brown">
+                        <span class="btn btn-light mt-auto btn-product"></span>
                         <div class="card-body d-flex flex-column justify-content-between">
-                          <h5 class="card-title">Café Pequeno</h5>
-                          <p class="card-subtitle mb-2">$8 R</p>
-                          <p class="card-text">Café em xícara pequena, pode ser cortado ou sozinho</p>
+                          <h5 class="card-title">Café com Leite</h5>
+                          <p class="card-subtitle mb-2">$12 R</p>
+                          <p class="card-text">Simplesmente o clássico café com leite</p>
                         </div>
+                        <span class="btn btn-light mt-auto btn-product"></span>
                       </div>
                     </div>
                     <!-- Card 4 -->
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                       <div class="card h-100 text-white bg-brown">
+                        <span class="btn btn-light mt-auto btn-product"></span>
                         <div class="card-body d-flex flex-column justify-content-between">
-                          <h5 class="card-title">Suco natural de laranja</h5>
-                          <p class="card-subtitle mb-2">$18 R</p>
-                          <p class="card-text">Um cítrico natural e suco fresco</p>
+                          <h5 class="card-title">Café com Leite</h5>
+                          <p class="card-subtitle mb-2">$12 R</p>
+                          <p class="card-text">Simplesmente o clássico café com leite</p>
                         </div>
+                        <span class="btn btn-light mt-auto btn-product"></span>
                       </div>
                     </div>
                     <!-- Card 5 -->
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
-                        <div class="card h-100 text-white bg-brown">
-                          <div class="card-body d-flex flex-column justify-content-between">
-                            <h5 class="card-title">Croissant Presunto e Queijo</h5>
-                            <p class="card-subtitle mb-2">$15</p>
-                            <p class="card-text">Uma deliciosa explosão de sabores</p>
-                            
-                          </div>
+                      <div class="card h-100 text-white bg-brown">
+                        <span class="btn btn-light mt-auto btn-product"></span>
+                        <div class="card-body d-flex flex-column justify-content-between">
+                          <h5 class="card-title">Café com Leite</h5>
+                          <p class="card-subtitle mb-2">$12 R</p>
+                          <p class="card-text">Simplesmente o clássico café com leite</p>
                         </div>
+                        <span class="btn btn-light mt-auto btn-product"></span>
                       </div>
-                      <!-- Card 6 -->
-                      <div class="col-12 col-md-6 col-lg-3 mb-4">
-                        <div class="card h-100 text-white bg-brown">
-                          <div class="card-body d-flex flex-column justify-content-between">
-                            <h5 class="card-title">Combo Pastel</h5>
-                            <p class="card-subtitle mb-2">$8/Por Taza</p>
-                            <p class="card-text">Café + pastel de tu elección, la combinación perfecta.</p>
-                            
-                          </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                      <div class="card h-100 text-white bg-brown">
+                        <span class="btn btn-light mt-auto btn-product"></span>
+                        <div class="card-body d-flex flex-column justify-content-between">
+                          <h5 class="card-title">Café com Leite</h5>
+                          <p class="card-subtitle mb-2">$12 R</p>
+                          <p class="card-text">Simplesmente o clássico café com leite</p>
                         </div>
+                        <span class="btn btn-light mt-auto btn-product"></span>
                       </div>
+                    </div>
                     <!-- Card 7 -->
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                       <div class="card h-100 text-white bg-brown">
+                        <span class="btn btn-light mt-auto btn-product"></span>
                         <div class="card-body d-flex flex-column justify-content-between">
-                          <h5 class="card-title">Café Premium</h5>
-                          <p class="card-subtitle mb-2">$5/Por Taza</p>
-                          <p class="card-text">Café de especialidad, para los verdaderos amantes del café.</p>
-                          
+                          <h5 class="card-title">Café com Leite</h5>
+                          <p class="card-subtitle mb-2">$12 R</p>
+                          <p class="card-text">Simplesmente o clássico café com leite</p>
                         </div>
+                        <span class="btn btn-light mt-auto btn-product"></span>
                       </div>
                     </div>
                     <!-- Card 8 -->
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                       <div class="card h-100 text-white bg-brown">
+                        <span class="btn btn-light mt-auto btn-product"></span>
                         <div class="card-body d-flex flex-column justify-content-between">
-                          <h5 class="card-title">Fiesta de Café</h5>
-                          <p class="card-subtitle mb-2">$20/Por Taza</p>
-                          <p class="card-text">Café ilimitado y pasteles para compartir, ¡trae a tus amigos!</p>
+                          <h5 class="card-title">Café com Leite</h5>
+                          <p class="card-subtitle mb-2">$12 R</p>
+                          <p class="card-text">Simplesmente o clássico café com leite</p>
                         </div>
+                        <span class="btn btn-light mt-auto btn-product"></span>
                       </div>
                     </div>
                   <a href="menu.html" class="btn btn-light mt-auto menu-complete-button">Ver o cardápio completo</a>
                 </div>
             </section>
         </div>
+
+        <!-- Sección de imágenes -->
+
+        <div class="container container-images">
+          <h2 style="text-align: center; padding-top: 20px;" id="gallery">Nossa Galeria</h2>
+          <section class="section-images">
+            <div class="gallery-item">
+              <img src="images/mardel-menu.jpg" alt="Café especial">
+              <h3>Café Especial</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="images/mardelcafeteria.jpg" alt="Croissant">
+                <h3>Croissant</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="images/mardellogo.jpg" alt="Capuccino">
+                <h3>Capuccino</h3>
+            </div>
+          </section>
+          <a href="gallery.html" class="btn btn-light mt-auto menu-complete-button">Veja a galeria completa</a>
+        </div>
         <div class="container container-ubication">
-          <section class="section-location">
+          <section class="section-location" id="locate">
             <h2 id="locate">Visite-nos!</h2>
             <p>Visite-nos em nossa localidade para experimentar nossas delícias argentinas!</p>
             <div class="map-container">

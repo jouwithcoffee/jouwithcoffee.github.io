@@ -26,15 +26,16 @@
         }
 
         body {
-            font-family: sans-serif;
-            background-color: #e3e9e3;
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFFBF2;
             margin: 0;
             padding: 0;
+            background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
         }
 
         h1, h2 {
-            color: inherit;
-            font-weight: bold;
+            color: #383838 !important;
+            font-weight: bolder;
         }
 
         /* Navbar General */
@@ -157,8 +158,8 @@
         .menu-section h2 {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #8b4513;
             text-align: center;
+            color: #383838;
             margin-bottom: 1.5rem;
         }
 
@@ -184,13 +185,13 @@
         .menu-item h3 {
             font-size: 1.2rem;
             margin: 0;
-            color: #5a3e2b;
+            color: #383838;
         }
 
         .menu-item p {
             margin: 0 1rem 0 0;
             font-size: 0.9rem;
-            color: #7d7d7d;
+            color: #343a40;
         }
 
         .menu-item span {
@@ -215,13 +216,36 @@
             align-items: center;
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s;
+            /* transition: background-color 1s; */
         }
 
         .back-to-top:hover {
-            background-color: #a0522d;
+            /* background-color: #a0522d; */
+            /* bottom: 3rem; */
+            animation: back-to-top-animation 1.3s infinite;
+        }
+        @keyframes back-to-top-animation {
+          0% {
+            bottom: 2rem;
+          }
+          50% {
+            bottom: 2.8rem;
+          }
+          100% {
+            bottom: 2rem;
+          }
         }
     </style>
+    <script>
+      document.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+    </script>
 </head>
 
 <body>
@@ -231,7 +255,7 @@
         <!-- Logo -->
         <a class="navbar-brand d-flex align-items-center" href="#">
           <img src="images/mardellogo.jpg" alt="Mardel Logo" width="50" height="50" class="rounded-circle me-2">
-          <span class="fw-bold text-uppercase" style="font-weight: bold;">Mardel Café</span>
+          <span class="fw-bold text-uppercase" style="font-weight: bolder;">Mardel Café</span>
         </a>
         <!-- Toggler -->
         <button
@@ -247,11 +271,14 @@
         <!-- Links -->
         <div class="collapse navbar-collapse text-center" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Menú</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Promociones</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="#bebidas-quentes">Bebidas Quentes</a></li>
+            <li class="nav-item"><a class="nav-link" href="#bebidas">Bebidas</a></li>
+            <li class="nav-item"><a class="nav-link" href="#vitaminas">Vitaminas</a></li>
+            <li class="nav-item"><a class="nav-link" href="#salgados">Salgados</a></li>
+            <li class="nav-item"><a class="nav-link" href="#bolos-doces">Bolos e Doces</a></li>
             <!-- Dropdown -->
+            <!-- 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Más
@@ -263,10 +290,14 @@
                 <li><a class="dropdown-item" href="#">Política de Privacidad</a></li>
               </ul>
             </li>
+            -->
             <!-- Call to Action Button -->
+
+            <!--
             <li class="nav-item mt-2 mt-lg-0">
               <a href="#reservar" class="btn btn-primary px-4 py-2 rounded-pill text-light shadow-sm">Reserva Ahora</a>
             </li>
+          -->
           </ul>
         </div>
       </div>
@@ -342,7 +373,7 @@
       </section>
 
       <!-- Bebidas -->
-      <section class="menu-section" id="promocoes">
+      <section class="menu-section" id="bebidas">
           <h2>Bebidas</h2>
           <div class="menu-item">
               <div>
@@ -375,7 +406,7 @@
       </section>
 
       <!-- Vitaminas -->
-      <section class="menu-section" id="promocoes">
+      <section class="menu-section" id="vitaminas">
         <h2>Vitaminas</h2>
         <div class="menu-item">
             <div>
@@ -387,7 +418,7 @@
       </section>
 
       <!-- Salgados -->
-      <section class="menu-section" id="promocoes">
+      <section class="menu-section" id="salgados">
         <h2>Salgados</h2>
         <div class="menu-item">
             <div>
@@ -420,7 +451,7 @@
       </section>
   
       <!-- Bolos e Doces -->
-      <section class="menu-section" id="promocoes">
+      <section class="menu-section" id="bolos-doces">
         <h2>Promoções</h2>
         <div class="menu-item">
             <div>

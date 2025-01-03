@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Mardel</title>
+    <!-- Estilos -->
+    <!-- BootsWatch: Tema Minty para Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css">
+    
+    <style>
+        body {
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            background-color: #FFFBF2;
+            background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+        }
+
+
+                /* Navbar General */
+                .bg-dark {
+          background-color: #383838 !important;
+        }
+
+        .transition {
+          transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .scrolled {
+          background-color: #1c1c1c !important;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Navbar Branding */
+        .navbar-brand span {
+          color: #f3d9b1;
+          font-family: 'Poppins', sans-serif;
+          letter-spacing: 1px;
+          font-size: 1.2rem;
+        }
+
+        .navbar-brand img {
+          max-width: 60px;
+          height: auto;
+        }
+
+        /* Links */
+        .nav-link {
+          margin-left: .4rem;
+          position: relative;
+          font-size: 1rem;
+          transition: color 0.3s ease-in-out;
+        }
+
+        .nav-link:hover {
+          color: #f3d9b1;
+        }
+
+        /* Hover Animation */
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background-color: #f3d9b1;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .nav-link:hover::after {
+          width: 100%;
+          left: 0;
+        }
+
+        /* Dropdown */
+        .dropdown-menu {
+          background: #343a40;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-item {
+          color: #f3d9b1;
+        }
+
+        .dropdown-item:hover {
+          background-color: #495057;
+          color: white;
+        }
+
+        /* Call to Action Button */
+        .btn-primary {
+          background: linear-gradient(45deg, #f3a683, #eb5757);
+          border: none;
+          margin-left: 1.2rem;
+        }
+
+        .btn-primary:hover {
+          background: linear-gradient(45deg, #eb5757, #f3a683);
+          box-shadow: 0 4px 10px rgba(235, 87, 87, 0.4);
+          filter: drop-shadow(0 4px 10px rgba(255, 232, 232, 0.884));
+        }
+
+        /* Mobile Responsiveness */
+        .navbar-nav {
+          flex-direction: column;
+        }
+
+        .nav-item {
+          margin-bottom: 10px;
+        }
+
+        /* Sticky and Responsive */
+        @media (max-width: 576px) {
+          .navbar-brand span {
+            font-size: 1rem;
+          }
+      
+          .btn-primary {
+            font-size: 0.9rem;
+            padding: 8px 16px;
+          }
+        }
+
+
+        /* Galería */
+
+        .gallery-container {
+            padding: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: .925;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            opacity: 1;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.2));
+            z-index: 1;
+        }
+
+        .gallery-item h3 {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+            z-index: 2;
+            color: white;
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-container {
+                padding: 20px;
+            }
+
+            .gallery-item h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('scroll', () => {
+          const navbar = document.getElementById('navbar');
+          if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+    </script>
+</head>
+<body>
+        <!-- NAVBAR -->
+    <nav id="navbar" class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm sticky-top transition">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="images/mardellogo.jpg" alt="Mardel Logo" width="50" height="50" class="rounded-circle me-2">
+          <span class="fw-bold text-uppercase" style="font-weight: bolder;">Mardel Café</span>
+        </a>
+        <!-- Toggler -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Links -->
+        <div class="collapse navbar-collapse text-center" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <!--     <li class="nav-item"><a class="nav-link" href="#bebidas-quentes">Bebidas Quentes</a></li>  -->
+            <!--     <li class="nav-item"><a class="nav-link" href="#bebidas">Bebidas</a></li>  -->
+            <!--     <li class="nav-item"><a class="nav-link" href="#vitaminas">Vitaminas</a></li>  -->
+            <!--     <li class="nav-item"><a class="nav-link" href="#salgados">Salgados</a></li>  -->
+            <!--     <li class="nav-item"><a class="nav-link" href="#bolos-doces">Bolos e Doces</a></li>  -->
+            <!-- Dropdown -->
+            <!-- 
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Más
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Blog</a></li>
+                <li><a class="dropdown-item" href="#">Contacto</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Política de Privacidad</a></li>
+              </ul>
+            </li>
+            -->
+            <!-- Call to Action Button -->
+
+            <!--
+            <li class="nav-item mt-2 mt-lg-0">
+              <a href="#reservar" class="btn btn-primary px-4 py-2 rounded-pill text-light shadow-sm">Reserva Ahora</a>
+            </li>
+          -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Galería -->
+    <h1 style="text-align: center; padding-top: 3.7rem; color: #383838; font-weight: bolder;">Nossa Galeria</h1>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="images/mardel-menu.jpg" alt="Café especial">
+            <h3>Café Especial</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/mardelcafeteria.jpg" alt="Croissant">
+            <h3>Croissant</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/mardellogo.jpg" alt="Capuccino">
+            <h3>Capuccino</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/postre.jpg" alt="Postre Deluxe">
+            <h3>Postre Deluxe</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/mardel-menu.jpg" alt="Café especial">
+            <h3>Café Especial</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/mardelcafeteria.jpg" alt="Croissant">
+            <h3>Croissant</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/mardellogo.jpg" alt="Capuccino">
+            <h3>Capuccino</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/postre.jpg" alt="Postre Deluxe">
+            <h3>Postre Deluxe</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/mardel-menu.jpg" alt="Café especial">
+            <h3>Café Especial</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/mardelcafeteria.jpg" alt="Croissant">
+            <h3>Croissant</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/mardellogo.jpg" alt="Capuccino">
+            <h3>Capuccino</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/postre.jpg" alt="Postre Deluxe">
+            <h3>Postre Deluxe</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/mardel-menu.jpg" alt="Café especial">
+            <h3>Café Especial</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/mardelcafeteria.jpg" alt="Croissant">
+            <h3>Croissant</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/mardellogo.jpg" alt="Capuccino">
+            <h3>Capuccino</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/postre.jpg" alt="Postre Deluxe">
+            <h3>Postre Deluxe</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/mardel-menu.jpg" alt="Café especial">
+            <h3>Café Especial</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/mardelcafeteria.jpg" alt="Croissant">
+            <h3>Croissant</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/mardellogo.jpg" alt="Capuccino">
+            <h3>Capuccino</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="images/postre.jpg" alt="Postre Deluxe">
+            <h3>Postre Deluxe</h3>
+        </div>
+        
+    </div>
+
+
+      <!-- Scripts de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
