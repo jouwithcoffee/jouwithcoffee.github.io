@@ -1,0 +1,58 @@
+body {
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+}
+
+/* Galería */
+.gallery-container {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease-in-out;
+}
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .925;
+    transition: opacity 0.3s ease;
+}
+.gallery-item:hover img {
+    opacity: 1;
+}
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.2));
+    z-index: 1;
+}
+.gallery-item h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    z-index: 2;
+    color: white;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
+}
+@media (max-width: 768px) {
+    .gallery-container {
+        padding: 20px;
+    }
+    .gallery-item h3 {
+        font-size: 1.2rem;
+    }
+}

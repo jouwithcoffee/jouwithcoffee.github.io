@@ -1,0 +1,336 @@
+/* Fondo personalizado */
+.custom-row {
+    color: #f2f7f2 !important;
+    margin-bottom: 0 !important;
+    padding: 200px 0;
+    background: url('../images/mardelcafeteria.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+  }
+.custom-row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.custom-row > * {
+    z-index: 2;
+    position: relative;
+}
+/* Textos destacados */
+span {
+    font-weight: bolder;
+}
+
+  /* Botones personalizados (links a secciones) */
+/**
+/**        .container-buttons {
+/**          text-align: center;
+/**          padding: 50px 20px;
+/**          background: linear-gradient(120deg, #f4ede6, #f3e8d5);
+/**          border-radius: 10px;
+/**          box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+/**        }
+/**
+    /* Contenedor para los botones */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+    /* Estilos para los botones */
+.custom-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  color: white !important;
+  background: linear-gradient(to left, rgba(132, 94, 194, 1), rgba(196, 243, 251, 1));
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+.custom-button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(to right, rgba(132, 94, 194, 1), rgba(196, 243, 251, 1));
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+/* Sección informativa */
+.row-informative {
+    align-items: center;
+    padding: 10px 3.5rem;
+}
+.row-informative h2 {
+    color: #383838;
+}
+.col-informative {
+    padding: 0 1rem;
+    
+}
+.mardel-menu {
+    max-height: 25rem;
+    margin: 22px 0;
+}
+/* Media queries para mejor adaptación */
+@media (max-width: 768px) {
+    .custom-row {
+        padding: 100px 0;
+    }
+    .row-informative {
+        padding: 10px 1rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+/* Sección de números destacados */
+.highlighted-number {
+  color: #8B4513; /* Marrón */
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+.container-benefits p {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333; /* Gris oscuro */
+}
+
+
+
+
+
+
+/* Sección de promociones */
+.container-promotions h2, .container-products h2 {
+    color: #383838;
+}
+.container-products .card-body {
+    background: #1e1e2f; /* Fondo oscuro */
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* Textura sutil */
+}
+@media (max-width: 746px) {
+  .container-promotions .card, .container-products .card {
+    margin: auto;
+    max-width: 76%;
+  }
+}
+    /* Estilos de los botones */
+.container-images .btn, .container-products .card, .container-products .btn {
+    /* background: linear-gradient(90deg, #ff8a00, #e52e71, #9b51e0); */
+    background: linear-gradient(90deg, var(--grad-animation-third), var(--grad-animation-second), var(--grad-animation-first));
+    background-size: 300%;
+    animation: gradient-move 3s infinite;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: auto;
+}
+@keyframes gradient-move {
+    25% { background-position: 0%; }
+    75% { background-position: 100%; }
+}
+.btn-product {
+  width: 100%;
+}
+
+
+/* ============================= */
+
+
+
+
+/* Estilo general de las tarjetas de promociones */
+.container-promotions .card {
+  background: linear-gradient(135deg, #1e1e2f, #383838);
+  color: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Efecto hover para todas las tarjetas */
+.container-promotions .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilo específico para la tarjeta de promoción del día */
+.container-promotions .daily-promotion {
+  background: linear-gradient(135deg, #ff8a00, #e52e71) !important;
+  border: 2px solid #ffd700 !important;
+  box-shadow: 0 8px 20px rgba(255, 165, 0, 0.9) !important;
+}
+
+/* Efecto especial solo para la tarjeta destacada */
+.container-promotions .card:nth-child(4):hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(255, 165, 0, 1);
+}
+
+/* Ajustes de texto para mejor legibilidad */
+.container-promotions .card h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.container-promotions .card p {
+  font-size: 1rem;
+}
+
+/* Media Query para dispositivos más pequeños */
+@media (max-width: 768px) {
+  .container-promotions .card {
+      margin: auto;
+      max-width: 90%;
+  }
+}
+
+
+
+
+/* Sección de productos */
+.container-products .card {
+  padding: 12px;
+}
+.container-products .card-body, .container-promotions .card-body {
+  background: #FFFBF2; /* Fondo claro */
+  color: #383838 !important;
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* Textura sutil */
+  border-radius: 5px;
+}
+
+.container-promotios .card-body {
+  background: #1e1e2f !important;
+}
+
+/* Estilos de las imágenes */
+.container-images h2 {
+  color: #383838;
+}
+.section-images {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease-in-out;
+}
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+.gallery-item:hover img {
+    opacity: 0.7;
+}
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.2));
+    z-index: 1;
+}
+.gallery-item h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    z-index: 2;
+    color: white;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
+}
+@media (max-width: 768px) {
+    .gallery-container {
+        padding: 20px;
+    }
+    .gallery-item h3 {
+        font-size: 1.2rem;
+    }
+}
+/* Sección de ubicación */
+.container-images {
+  text-align: center;
+}
+.section-location {
+  text-align: center;
+  padding: 50px 20px;
+  background: #FFFBF2;
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  border-radius: 10px;
+  margin: 50px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.section-location h2 {
+  font-size: 2rem;
+  color: #5c4033;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.section-location p {
+  font-size: 1.2rem;
+  color: #6b4a3c;
+  margin-bottom: 20px;
+}
+.map-container {
+  width: 100%;
+  max-width: 800px;
+  height: 520px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+/* waves svg */
+.svg-waves {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  
+}
+.svg-waves-ajust {
+  margin-top: -3rem;
+}
+
+@media (min-width: 705px) {
+  .svg-waves-ajust {
+    margin-top: -7rem;
+  }
+}
+@media (min-width: 1450px) {
+  .svg-waves-ajust {
+    display: none;
+  }
+}

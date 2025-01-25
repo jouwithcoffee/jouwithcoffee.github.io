@@ -1,0 +1,101 @@
+.container-fluid {
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  overflow-x: hidden;
+}
+h1, h2 {
+    color: inherit;
+    font-weight: bold;
+}
+/* Navbar General */
+.bg-dark {
+  background-color: var(--gris-logo) !important;
+}
+.transition {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.scrolled {
+  background-color: var(--gris-mas-oscuro) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+/* Navbar Branding */
+.navbar-brand span {
+  color: var(--blanco-hueso);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+.navbar-brand img {
+  max-width: 60px;
+  height: auto;
+  margin-right: .5rem;
+}
+/* Links */
+.nav-link {
+  margin-left: .4rem;
+  position: relative;
+  font-size: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+.nav-link:hover {
+  color: var(--blanco-hueso);
+  font-weight: bold;
+}
+/* Hover Animation */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--gris-neutro);
+  transition: all 0.3s ease-in-out;
+}
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+/* Dropdown */
+.dropdown-menu {
+  background: #343a40;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.dropdown-item {
+  color: #f3d9b1;
+}
+.dropdown-item:hover {
+  background-color: #495057;
+  color: white;
+}
+/* Call to Action Button */
+.btn-primary {
+  background: linear-gradient(45deg, #f3a683, #eb5757);
+  border: none;
+  margin-left: 1.2rem;
+}
+.btn-primary:hover {
+  background: linear-gradient(45deg, #eb5757, #f3a683);
+  box-shadow: 0 4px 10px rgba(235, 87, 87, 0.4);
+  filter: drop-shadow(0 4px 10px rgba(255, 232, 232, 0.884));
+}
+/* Mobile Responsiveness */
+.navbar-nav {
+  flex-direction: column;
+}
+.nav-item {
+  margin-bottom: 10px;
+}
+/* Sticky and Responsive */
+@media (max-width: 576px) {
+  .navbar-brand span {
+    font-size: 1rem;
+  }
+  .btn-primary {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}

@@ -1,0 +1,83 @@
+/* Menu Section */
+
+body {
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+}
+
+.menu-section {
+    padding: 2rem 1rem;
+    border-bottom: 1px solid #ddd;
+}
+.menu-section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: #383838;
+    margin-bottom: 1.5rem;
+}
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.menu-item h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #383838;
+}
+.menu-item p {
+    margin: 0 1rem 0 0;
+    font-size: 0.9rem;
+    color: #343a40;
+}
+.menu-item span {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #8b4513;
+}
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #8b4513;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* transition: background-color 1s; */
+}
+.back-to-top:hover {
+    /* background-color: #a0522d; */
+    /* bottom: 3rem; */
+    animation: back-to-top-animation 1.3s infinite;
+}
+@keyframes back-to-top-animation {
+  0% {
+    bottom: 2rem;
+  }
+  50% {
+    bottom: 2.8rem;
+  }
+  100% {
+    bottom: 2rem;
+  }
+}
