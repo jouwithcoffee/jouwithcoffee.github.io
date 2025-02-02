@@ -80,7 +80,7 @@ body {
     height: 100%;
     position: absolute;
     top: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 99%, rgba(0, 0, 0, 0.8) 99%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 2%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 90%, rgba(0, 0, 0, 0.8) 99%);
     z-index: 2;
 }
 
@@ -90,5 +90,5 @@ body {
     object-fit: cover;
     flex-shrink: 0;
     box-shadow: 0 0 18px rgba(0,0,0,0.2);
-
+    border-radius: 16px;
 }
