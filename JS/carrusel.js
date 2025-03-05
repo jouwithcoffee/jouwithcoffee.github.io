@@ -1,6 +1,6 @@
 const carrusel = document.getElementById('carrusel');
 const imagenes = carrusel.children;
-const imagenesPorVista = 3;
+const imagenesPorVista = 5;
 let indiceActual = 0;
 
 // Clonar las primeras imágenes para crear el bucle infinito
@@ -16,7 +16,7 @@ function cambiarImagenes() {
     carrusel.style.transform = `translateX(${desplazamiento}px)`;
 
     // Reiniciar el carrusel cuando llegue al final de las imágenes originales
-    if (indiceActual >= imagenes.length - imagenesPorVista) {
+    if (indiceActual >= imagenes.length - imagenesPorVista + 1) {
         setTimeout(() => {
             carrusel.style.transition = 'none'; // Sin animación para el "salto"
             carrusel.style.transform = 'translateX(0px)';
@@ -29,4 +29,4 @@ function cambiarImagenes() {
 }
 
 // Cambiar imágenes cada 10 segundos
-setInterval(cambiarImagenes, 6000);
+setInterval(cambiarImagenes, 1000);
